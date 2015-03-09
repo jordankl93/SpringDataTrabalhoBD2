@@ -1,0 +1,15 @@
+com\trab2\competicoesesportivas\App.class
+com\trab2\Config.class
+com\trab2\model\Id.class
+com\trab2\repositorio\RepositorioCompeticao.class
+com\trab2\model\Competicao.class
+com\trab2\repositorio\DAO.class
+com\trab2\repositorio\RepositorioEvento.class
+com\trab2\repositorio\RepositorioCompetidor.class
+com\trab2\config\Hibernate.class
+com\trab2\model\Competidor.class
+com\trab2\repositorio\RepositorioParticipacao.class
+com\trab2\model\Evento.class
+com\trab2\model\Participacao.class
+com\trab2\repositorio\RepositorioPolitica.class
+com\trab2\model\Politica.class
