@@ -34,7 +34,7 @@ public class Hibernate {
         // Usando o usuário "usuario"
         dataSource.setUsername("postgres");
         // E a senha "senha"
-        dataSource.setPassword("jokl93");
+        dataSource.setPassword("*****");
 
         return dataSource;
     }
