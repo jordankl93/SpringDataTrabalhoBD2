@@ -31,10 +31,10 @@ public class Hibernate {
         dataSource.setDriverClassName("org.postgresql.Driver");
         // Conecta no servidor "localhost" e no banco de dados "carros"
         dataSource.setUrl("jdbc:postgresql://localhost:5432/CompeticoesEsportivas");
-        // Usando o usuário "usuario"
+        // Usando o usuário "postgres"
         dataSource.setUsername("postgres");
         // E a senha "senha"
-        dataSource.setPassword("jokl93");
+        dataSource.setPassword("senha");
 
         return dataSource;
     }
