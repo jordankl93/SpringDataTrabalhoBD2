@@ -103,6 +103,9 @@ public class App {
         System.out.println("c) Top 5 competidores que mais venceram campeonatos: ");
         acessoParticipacao.BuscaByColocacao();
         
+        System.out.println("d) Buscar informação do jogador no campeonato");
+        acessoCompetidor.BuscaInfoCompetidorByCompeticao(acessoCompeticao.findOne(17));
+        
         
         
          

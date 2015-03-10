@@ -30,6 +30,10 @@ public class CompeticaoDAO extends DAO{
     
     public void deleteCompeticao(Competicao competicao){
         this.getRepositorioCompeticao().delete(competicao);
-    }  
+    }
+    
+    public Competicao findOne(int id){
+        return this.getRepositorioCompeticao().findOne(id);
+    }
         
 }

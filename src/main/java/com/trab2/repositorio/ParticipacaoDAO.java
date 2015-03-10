@@ -33,10 +33,11 @@ public class ParticipacaoDAO extends DAO{
     }
     
     public void BuscaByColocacao(){
-        
+        System.out.println("------------------------------------------------------------------------");
         for(Object[] part : this.getRepositorioParticipacao().findByColocacao()){
             System.out.println("Nome competidor: "+ part[0].toString()+ " - Campeonatos vencidos: "+ part[1].toString());
         }
+        System.out.println("------------------------------------------------------------------------\n");
     }
     
 }

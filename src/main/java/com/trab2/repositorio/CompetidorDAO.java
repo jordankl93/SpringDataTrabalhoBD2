@@ -5,8 +5,11 @@
  */
 package com.trab2.repositorio;
 
+import com.trab2.model.Competicao;
 import com.trab2.model.Competidor;
+import com.trab2.model.Evento;
 import com.trab2.model.Participacao;
+import java.util.List;
 
 /**
  *
@@ -41,6 +44,42 @@ public class CompetidorDAO extends DAO{
         else
             System.out.println("ID inválido");
         System.out.println("------------------------------------------------------------------------\n");
+    }
+    
+    public void BuscaInfoCompetidorByCompeticao(Competicao competicao){
+        int ptos = 0, vit = 0, emp = 0, derr = 0; 
+        
+        //Lista todas as participações dessa determinada competicao
+        List<Participacao> participacoes = this.getRepositorioParticipacao().findByCompeticao(competicao);        
+        System.out.println("------------------------------------------------------------------------");
+        System.out.println("Competicao: " + competicao.getNome()+"\n");
+        
+        //Lista Por competidores
+        for(Participacao part : participacoes){
+            System.out.println("- Competidor: "+part.getCompetidor().getNome());
+            System.out.println("\t\tColocacao: "+ part.getColocacao());
+            for(Evento ev : part.getCompetidor().getEventos1()){
+                //caso de vitória..
+                if(ev.getVencedor_cod() == part.getCompetidor().getId()){
+                    ptos += competicao.getPolitica().getP_vitoria();
+                    vit++;
+                }
+                else{
+                    //se vencedor_cod == 0 significa empate
+                    if(ev.getVencedor_cod() == 0 && competicao.getPolitica().isPermissao()){
+                        ptos += competicao.getPolitica().getP_empate();
+                        emp++;
+                    }
+                    //demais casos == derrota
+                    else{
+                        ptos += competicao.getPolitica().getP_derrota();
+                        derr++;
+                    }
+                }
+            }
+            System.out.println("\t\tPontuacao: "+ptos+"| Vitorias: "+vit+"| Empates: "+emp+"| Derrotas: "+derr);
+        }
+        System.out.println("------------------------------------------------------------------------");
     }
     
 }

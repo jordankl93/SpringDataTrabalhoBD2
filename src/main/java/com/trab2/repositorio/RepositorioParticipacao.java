@@ -10,6 +10,7 @@ package com.trab2.repositorio;
  * @author Jordan
  */
 
+import com.trab2.model.Competicao;
 import com.trab2.model.Competidor;
 import com.trab2.model.Participacao;
 import java.util.List;
@@ -28,6 +29,7 @@ public interface RepositorioParticipacao extends JpaRepository<Participacao, Int
                 "group by c.nome \n" +
                 "order by qtd desc", nativeQuery=true)
     public List<Object[]> findByColocacao();
-   
+    
+    public List<Participacao> findByCompeticao(Competicao competicao);    
     
 }
