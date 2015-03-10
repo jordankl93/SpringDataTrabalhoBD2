@@ -34,7 +34,11 @@ public class Hibernate {
         // Usando o usuário "postgres"
         dataSource.setUsername("postgres");
         // E a senha "senha"
+<<<<<<< HEAD
         dataSource.setPassword("senha");
+=======
+        dataSource.setPassword("*****");
+>>>>>>> origin/master
 
         return dataSource;
     }
